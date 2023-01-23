@@ -1,7 +1,7 @@
 const http = require('http');
 
 const port = process.env.PORT || 3000;
-const host = 'localhost';
+const host = '0.0.0.0';
 
 const requestListener = function (req, res) {
     if (req.url === '/homework') {
