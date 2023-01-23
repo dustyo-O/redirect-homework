@@ -4,7 +4,14 @@ const port = process.env.PORT || 3000;
 const host = 'localhost';
 
 const requestListener = function (req, res) {
-    res.writeHead(301, { Location: 'https://flannel-bacon-c10.notion.site/Dusty-Frontend-School-11280135e7d64d02ab109e51b0c18d7b' });
+    if (req.url === '/homework') {
+        res.writeHead(301, { Location: 'https://flannel-bacon-c10.notion.site/Dusty-Frontend-School-11280135e7d64d02ab109e51b0c18d7b' });
+        res.end();
+    }
+
+    res.writeHead(200);
+
+    res.write('pong');
     res.end();
 };
 
